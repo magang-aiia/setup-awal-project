@@ -1,26 +1,28 @@
 <script setup>
-import BreezeButton from '@/Components/Button.vue';
-import BreezeCheckbox from '@/Components/Checkbox.vue';
-import BreezeGuestLayout from '@/Layouts/Guest.vue';
-import BreezeInput from '@/Components/Input.vue';
-import BreezeLabel from '@/Components/Label.vue';
-import BreezeValidationErrors from '@/Components/ValidationErrors.vue';
-import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
+import BreezeButton from "@/Components/Button.vue";
+import BreezeCheckbox from "@/Components/Checkbox.vue";
+import BreezeGuestLayout from "@/Layouts/Guest.vue";
+import BreezeInput from "@/Components/Input.vue";
+import BreezeLabel from "@/Components/Label.vue";
+import BreezeValidationErrors from "@/Components/ValidationErrors.vue";
+import { Head, Link, useForm } from "@inertiajs/inertia-vue3";
 
 defineProps({
     canResetPassword: Boolean,
-    status: String,
+    status: String
 });
 
+const route = window.route;
+
 const form = useForm({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
     remember: false
 });
 
 const submit = () => {
-    form.post(route('login'), {
-        onFinish: () => form.reset('password'),
+    form.post(route("login"), {
+        onFinish: () => form.reset("password")
     });
 };
 </script>
