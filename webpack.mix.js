@@ -1,4 +1,4 @@
-const mix = require('laravel-mix');
+const mix = require("laravel-mix")
 
 /*
  |--------------------------------------------------------------------------
@@ -11,22 +11,22 @@ const mix = require('laravel-mix');
  |
  */
 
-require('laravel-mix-eslint-config');
+require("laravel-mix-eslint-config")
 
-mix.js('resources/js/app.js', 'public/js')
+mix.js("resources/js/app.js", "public/js")
     .eslint({
-        extensions: ['js', 'vue'],
+        extensions: ["js", "vue"],
         options: {
             fix: true,
-            cache: false
-        }
+            cache: false,
+        },
     })
     .vue()
-    .postCss('resources/css/app.css', 'public/css', [require('tailwindcss'), require('autoprefixer')])
+    .postCss("resources/css/app.css", "public/css", [require("tailwindcss"), require("autoprefixer")])
     .alias({
-        '@': 'resources/js',
-    });
+        "@": "resources/js",
+    })
 
 if (mix.inProduction()) {
-    mix.version();
+    mix.version()
 }
