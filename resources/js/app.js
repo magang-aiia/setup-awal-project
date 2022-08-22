@@ -1,6 +1,7 @@
 import { createApp, h } from "vue"
 import { createInertiaApp } from "@inertiajs/inertia-vue3"
 import { InertiaProgress } from "@inertiajs/progress"
+import store from "./store"
 
 require("./bootstrap")
 
@@ -13,9 +14,10 @@ createInertiaApp({
     setup({ el, app, props, plugin }) {
         return createApp({ render: () => h(app, props) })
             .use(plugin)
+            .use(store)
             .mixin({ methods: { route } })
             .mount(el)
     },
 })
 
-InertiaProgress.init({ color: "#4B5563" })
+InertiaProgress.init({ color: "#4B5563", showSpinner: true })

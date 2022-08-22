@@ -1,12 +1,12 @@
 <script setup>
-    import BreezeAuthenticatedLayout from "@/Layouts/Authenticated.vue"
-    import { Head } from "@inertiajs/inertia-vue3"
+import AdminLayout from "@/Layouts/NewLayout.vue"
+import { Head } from "@inertiajs/inertia-vue3"
 </script>
 
 <template>
     <Head title="Dashboard" />
 
-    <BreezeAuthenticatedLayout>
+    <AdminLayout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">Dashboard</h2>
         </template>
@@ -18,5 +18,5 @@
                 </div>
             </div>
         </div>
-    </BreezeAuthenticatedLayout>
+    </AdminLayout>
 </template>
