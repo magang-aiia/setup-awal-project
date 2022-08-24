@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Inertia\Inertia;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Mading;
 
 class MadingController extends Controller
 {
@@ -15,7 +16,9 @@ class MadingController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Mading/Index');
+        return Inertia::render('Mading/All', [
+            'madings' => Mading::all()
+        ]);
     }
 
     /**
@@ -25,7 +28,7 @@ class MadingController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Mading/Create');
     }
 
     /**

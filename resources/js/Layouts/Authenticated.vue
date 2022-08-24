@@ -30,6 +30,9 @@
                                 <BreezeNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </BreezeNavLink>
+                                <BreezeNavLink :href="route('mading.index')" :active="route().current('mading.index')">
+                                    Mading
+                                </BreezeNavLink>
                             </div>
                         </div>
 
@@ -111,6 +114,9 @@
                     <div class="pt-2 pb-3 space-y-1">
                         <BreezeResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
+                        </BreezeResponsiveNavLink>
+                        <BreezeResponsiveNavLink :href="route('mading.index')" :active="route().current('mading')">
+                            Mading
                         </BreezeResponsiveNavLink>
                     </div>
 

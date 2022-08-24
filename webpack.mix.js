@@ -21,7 +21,13 @@ mix.js("resources/js/app.js", "public/js")
             cache: false,
         },
     })
-    .vue()
+    .vue({
+        options: {
+            compilerOptions: {
+                isCustomElement: (tag) => ["box-icon"].includes(tag),
+            },
+        },
+    })
     .postCss("resources/css/app.css", "public/css", [require("tailwindcss"), require("autoprefixer")])
     .alias({
         "@": "resources/js",

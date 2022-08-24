@@ -4,9 +4,7 @@
 </script>
 
 <template>
-    <Head title="Dashboard" />
+    <Head title="Mading" />
 
-    <MainLayout>
-        <div class="p-6">You're logged in!</div>
-    </MainLayout>
+    <MainLayout> </MainLayout>
 </template>
