@@ -1,63 +1,59 @@
 <script setup>
     import Navbar from "@/Components/Navbar.vue"
     import Footer from "@/Components/Footer.vue"
-    import { ref } from "vue"
 
-    const nav = ref([
-        {
-            name: "Dashboard",
-            active: false,
-            to: "dashboard",
-            icon: "home",
-            iconType: "regular",
-            child: [],
-        },
-        {
-            name: "Izin",
-            active: false,
-            to: null,
-            icon: "log-out-circle",
-            iconType: "regular",
-            child: [
+    defineProps({
+        nav: {
+            type: Array,
+            default: () => [
                 {
-                    name: "Cuti",
+                    name: "Dashboard",
                     active: false,
-                    to: null,
+                    to: "dashboard",
+                    icon: "home",
+                    iconType: "regular",
+                    child: [],
                 },
                 {
-                    name: "Izin IMU/ITU",
+                    name: "Izin",
                     active: false,
                     to: null,
+                    icon: "log-out-circle",
+                    iconType: "regular",
+                    child: [
+                        {
+                            name: "Cuti",
+                            active: false,
+                            to: null,
+                        },
+                        {
+                            name: "Izin IMU/ITU",
+                            active: false,
+                            to: null,
+                        },
+                        {
+                            name: "Dinas Luar",
+                            active: false,
+                            to: null,
+                        },
+                        {
+                            name: "Sakit",
+                            active: false,
+                            to: null,
+                        },
+                    ],
                 },
                 {
-                    name: "Dinas Luar",
+                    name: "Profile",
                     active: false,
                     to: null,
-                },
-                {
-                    name: "Sakit",
-                    active: false,
-                    to: null,
+                    icon: "user-circle",
+                    iconType: "regular",
+                    child: [],
                 },
             ],
         },
-        {
-            name: "Profile",
-            active: false,
-            to: null,
-            icon: "user-circle",
-            iconType: "regular",
-            child: [],
-        },
-        {
-            name: "Mading",
-            active: false,
-            to: "mading.index",
-            icon: "book",
-            iconType: "regular",
-            child: [],
-        },
-    ])
+    })
 </script>
 
 <template>

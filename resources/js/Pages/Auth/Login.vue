@@ -23,7 +23,7 @@
 </script>
 
 <template>
-    <Head title="Login S1AR" />
+    <Head title="Login" />
     <div class="hero min-h-screen bg-base-200">
         <div class="hero-content flex-col lg:flex-row">
             <div class="text-center lg:w-[50vw] lg:text-right mx-5">

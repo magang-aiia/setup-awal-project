@@ -24034,6 +24034,85 @@ return withDirectives(h(comp), [
                 /***/
             },
 
+        /***/ "./resources/js/Pages/User/NavUser.js":
+            /*!********************************************!*\
+  !*** ./resources/js/Pages/User/NavUser.js ***!
+  \********************************************/
+            /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+                "use strict"
+                __webpack_require__.r(__webpack_exports__)
+                /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+                    /* harmony export */ default: () => __WEBPACK_DEFAULT_EXPORT__,
+                    /* harmony export */
+                })
+                function getNav() {
+                    var parentActive = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : ""
+                    var childActive = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ""
+                    return [
+                        {
+                            name: "Dashboard",
+                            active: parentActive === "dashboard",
+                            to: "dashboard",
+                            icon: "home",
+                            iconType: "regular",
+                            child: [],
+                        },
+                        {
+                            name: "Pengajuan",
+                            active: parentActive === "pengajuan",
+                            to: null,
+                            icon: "message-alt-edit",
+                            iconType: "regular",
+                            child: [
+                                {
+                                    name: "Datadiri",
+                                    active: childActive === "datadiri",
+                                    to: "datadiri",
+                                },
+                                {
+                                    name: "Cuti",
+                                    active: childActive === "cuti",
+                                    to: "cuti",
+                                },
+                                {
+                                    name: "Izin",
+                                    active: childActive === "izin",
+                                    to: "izin",
+                                },
+                            ],
+                        },
+                        {
+                            name: "Absensi",
+                            active: parentActive === "absensi",
+                            to: "absensi",
+                            icon: "calendar-check",
+                            iconType: "regular",
+                            child: [],
+                        },
+                        {
+                            name: "Approval",
+                            active: parentActive === "approval",
+                            to: "approval",
+                            icon: "pen",
+                            iconType: "regular",
+                            child: [],
+                        },
+                        {
+                            name: "History",
+                            active: parentActive === "history",
+                            to: "history",
+                            icon: "history",
+                            iconType: "regular",
+                            child: [],
+                        },
+                    ]
+                }
+
+                /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = getNav
+
+                /***/
+            },
+
         /***/ "./resources/js/app.js":
             /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -24479,75 +24558,69 @@ return withDirectives(h(comp), [
                 /* harmony import */ var _Components_Footer_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
                     /*! @/Components/Footer.vue */ "./resources/js/Components/Footer.vue"
                 )
-                /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-                    /*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js"
-                )
 
                 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = {
                     __name: "Main",
+                    props: {
+                        nav: {
+                            type: Array,
+                            default: function _default() {
+                                return [
+                                    {
+                                        name: "Dashboard",
+                                        active: false,
+                                        to: "dashboard",
+                                        icon: "home",
+                                        iconType: "regular",
+                                        child: [],
+                                    },
+                                    {
+                                        name: "Izin",
+                                        active: false,
+                                        to: null,
+                                        icon: "log-out-circle",
+                                        iconType: "regular",
+                                        child: [
+                                            {
+                                                name: "Cuti",
+                                                active: false,
+                                                to: null,
+                                            },
+                                            {
+                                                name: "Izin IMU/ITU",
+                                                active: false,
+                                                to: null,
+                                            },
+                                            {
+                                                name: "Dinas Luar",
+                                                active: false,
+                                                to: null,
+                                            },
+                                            {
+                                                name: "Sakit",
+                                                active: false,
+                                                to: null,
+                                            },
+                                        ],
+                                    },
+                                    {
+                                        name: "Profile",
+                                        active: false,
+                                        to: null,
+                                        icon: "user-circle",
+                                        iconType: "regular",
+                                        child: [],
+                                    },
+                                ]
+                            },
+                        },
+                    },
                     setup: function setup(__props, _ref) {
                         var expose = _ref.expose
                         expose()
-                        var nav = (0, vue__WEBPACK_IMPORTED_MODULE_2__.ref)([
-                            {
-                                name: "Dashboard",
-                                active: false,
-                                to: "dashboard",
-                                icon: "home",
-                                iconType: "regular",
-                                child: [],
-                            },
-                            {
-                                name: "Izin",
-                                active: false,
-                                to: null,
-                                icon: "log-out-circle",
-                                iconType: "regular",
-                                child: [
-                                    {
-                                        name: "Cuti",
-                                        active: false,
-                                        to: null,
-                                    },
-                                    {
-                                        name: "Izin IMU/ITU",
-                                        active: false,
-                                        to: null,
-                                    },
-                                    {
-                                        name: "Dinas Luar",
-                                        active: false,
-                                        to: null,
-                                    },
-                                    {
-                                        name: "Sakit",
-                                        active: false,
-                                        to: null,
-                                    },
-                                ],
-                            },
-                            {
-                                name: "Profile",
-                                active: false,
-                                to: null,
-                                icon: "user-circle",
-                                iconType: "regular",
-                                child: [],
-                            },
-                            {
-                                name: "Mading",
-                                active: false,
-                                to: "mading.index",
-                                icon: "book",
-                                iconType: "regular",
-                                child: [],
-                            },
-                        ])
                         var __returned__ = {
-                            nav: nav,
                             Navbar: _Components_Navbar_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
                             Footer: _Components_Footer_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-                            ref: vue__WEBPACK_IMPORTED_MODULE_2__.ref,
                         }
                         Object.defineProperty(__returned__, "__isScriptSetup", {
                             enumerable: false,
@@ -25117,10 +25190,10 @@ return withDirectives(h(comp), [
                 /***/
             },
 
-        /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Mading/All.vue?vue&type=script&lang=js":
-            /*!***********************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Mading/All.vue?vue&type=script&lang=js ***!
-  \***********************************************************************************************************************************************************************************************/
+        /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Absensi.vue?vue&type=script&lang=js":
+            /*!*************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Absensi.vue?vue&type=script&lang=js ***!
+  \*************************************************************************************************************************************************************************************************/
             /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
                 "use strict"
                 __webpack_require__.r(__webpack_exports__)
@@ -25128,33 +25201,35 @@ return withDirectives(h(comp), [
                     /* harmony export */ default: () => __WEBPACK_DEFAULT_EXPORT__,
                     /* harmony export */
                 })
-                /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+                /* harmony import */ var _Layouts_Main_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+                    /*! @/Layouts/Main.vue */ "./resources/js/Layouts/Main.vue"
+                )
+                /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
                     /*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js"
                 )
-                /* harmony import */ var _Layouts_Main__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-                    /*! @/Layouts/Main */ "./resources/js/Layouts/Main.vue"
+                /* harmony import */ var _Pages_User_NavUser_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+                    /*! @/Pages/User/NavUser.js */ "./resources/js/Pages/User/NavUser.js"
                 )
 
                 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = {
-                    props: {
-                        madings: {
-                            type: Array,
-                            default: null,
-                        },
-                    },
                     components: {
-                        InertiaHead: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.Head,
-                        MainLayout: _Layouts_Main__WEBPACK_IMPORTED_MODULE_1__["default"],
+                        MainLayout: _Layouts_Main_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+                        HeadInertia: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Head,
+                    },
+                    data: function data() {
+                        return {
+                            nav: (0, _Pages_User_NavUser_js__WEBPACK_IMPORTED_MODULE_2__["default"])("absensi"),
+                        }
                     },
                 }
 
                 /***/
             },
 
-        /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Mading/Create.vue?vue&type=script&setup=true&lang=js":
-            /*!*************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Mading/Create.vue?vue&type=script&setup=true&lang=js ***!
-  \*************************************************************************************************************************************************************************************************************/
+        /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Approval.vue?vue&type=script&lang=js":
+            /*!**************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Approval.vue?vue&type=script&lang=js ***!
+  \**************************************************************************************************************************************************************************************************/
             /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
                 "use strict"
                 __webpack_require__.r(__webpack_exports__)
@@ -25168,31 +25243,29 @@ return withDirectives(h(comp), [
                 /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
                     /*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js"
                 )
+                /* harmony import */ var _Pages_User_NavUser_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+                    /*! @/Pages/User/NavUser.js */ "./resources/js/Pages/User/NavUser.js"
+                )
 
                 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = {
-                    __name: "Create",
-                    setup: function setup(__props, _ref) {
-                        var expose = _ref.expose
-                        expose()
-                        var __returned__ = {
-                            MainLayout: _Layouts_Main_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-                            Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Head,
+                    components: {
+                        MainLayout: _Layouts_Main_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+                        HeadInertia: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Head,
+                    },
+                    data: function data() {
+                        return {
+                            nav: (0, _Pages_User_NavUser_js__WEBPACK_IMPORTED_MODULE_2__["default"])("approval"),
                         }
-                        Object.defineProperty(__returned__, "__isScriptSetup", {
-                            enumerable: false,
-                            value: true,
-                        })
-                        return __returned__
                     },
                 }
 
                 /***/
             },
 
-        /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Mading/Input.vue?vue&type=script&setup=true&lang=js":
-            /*!************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Mading/Input.vue?vue&type=script&setup=true&lang=js ***!
-  \************************************************************************************************************************************************************************************************************/
+        /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Cuti.vue?vue&type=script&lang=js":
+            /*!**********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Cuti.vue?vue&type=script&lang=js ***!
+  \**********************************************************************************************************************************************************************************************/
             /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
                 "use strict"
                 __webpack_require__.r(__webpack_exports__)
@@ -25206,31 +25279,32 @@ return withDirectives(h(comp), [
                 /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
                     /*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js"
                 )
+                /* harmony import */ var _Pages_User_NavUser_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+                    /*! @/Pages/User/NavUser.js */ "./resources/js/Pages/User/NavUser.js"
+                )
 
                 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = {
-                    __name: "Input",
-                    setup: function setup(__props, _ref) {
-                        var expose = _ref.expose
-                        expose()
-                        var __returned__ = {
-                            MainLayout: _Layouts_Main_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-                            Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Head,
+                    components: {
+                        MainLayout: _Layouts_Main_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+                        HeadInertia: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Head,
+                    },
+                    data: function data() {
+                        return {
+                            nav: (0, _Pages_User_NavUser_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+                                "pengajuan",
+                                "cuti"
+                            ),
                         }
-                        Object.defineProperty(__returned__, "__isScriptSetup", {
-                            enumerable: false,
-                            value: true,
-                        })
-                        return __returned__
                     },
                 }
 
                 /***/
             },
 
-        /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Mading/One.vue?vue&type=script&setup=true&lang=js":
-            /*!**********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Mading/One.vue?vue&type=script&setup=true&lang=js ***!
-  \**********************************************************************************************************************************************************************************************************/
+        /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Dashboard.vue?vue&type=script&lang=js":
+            /*!***************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Dashboard.vue?vue&type=script&lang=js ***!
+  \***************************************************************************************************************************************************************************************************/
             /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
                 "use strict"
                 __webpack_require__.r(__webpack_exports__)
@@ -25244,21 +25318,169 @@ return withDirectives(h(comp), [
                 /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
                     /*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js"
                 )
+                /* harmony import */ var _Pages_User_NavUser_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+                    /*! @/Pages/User/NavUser.js */ "./resources/js/Pages/User/NavUser.js"
+                )
 
                 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = {
-                    __name: "One",
-                    setup: function setup(__props, _ref) {
-                        var expose = _ref.expose
-                        expose()
-                        var __returned__ = {
-                            MainLayout: _Layouts_Main_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-                            Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Head,
+                    components: {
+                        MainLayout: _Layouts_Main_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+                        HeadInertia: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Head,
+                    },
+                    data: function data() {
+                        return {
+                            nav: (0, _Pages_User_NavUser_js__WEBPACK_IMPORTED_MODULE_2__["default"])("dashboard"),
                         }
-                        Object.defineProperty(__returned__, "__isScriptSetup", {
-                            enumerable: false,
-                            value: true,
-                        })
-                        return __returned__
+                    },
+                }
+
+                /***/
+            },
+
+        /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Datadiri.vue?vue&type=script&lang=js":
+            /*!**************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Datadiri.vue?vue&type=script&lang=js ***!
+  \**************************************************************************************************************************************************************************************************/
+            /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+                "use strict"
+                __webpack_require__.r(__webpack_exports__)
+                /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+                    /* harmony export */ default: () => __WEBPACK_DEFAULT_EXPORT__,
+                    /* harmony export */
+                })
+                /* harmony import */ var _Layouts_Main_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+                    /*! @/Layouts/Main.vue */ "./resources/js/Layouts/Main.vue"
+                )
+                /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+                    /*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js"
+                )
+                /* harmony import */ var _Pages_User_NavUser_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+                    /*! @/Pages/User/NavUser.js */ "./resources/js/Pages/User/NavUser.js"
+                )
+
+                /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = {
+                    components: {
+                        MainLayout: _Layouts_Main_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+                        HeadInertia: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Head,
+                    },
+                    data: function data() {
+                        return {
+                            nav: (0, _Pages_User_NavUser_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+                                "pengajuan",
+                                "datadiri"
+                            ),
+                        }
+                    },
+                }
+
+                /***/
+            },
+
+        /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/History.vue?vue&type=script&lang=js":
+            /*!*************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/History.vue?vue&type=script&lang=js ***!
+  \*************************************************************************************************************************************************************************************************/
+            /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+                "use strict"
+                __webpack_require__.r(__webpack_exports__)
+                /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+                    /* harmony export */ default: () => __WEBPACK_DEFAULT_EXPORT__,
+                    /* harmony export */
+                })
+                /* harmony import */ var _Layouts_Main_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+                    /*! @/Layouts/Main.vue */ "./resources/js/Layouts/Main.vue"
+                )
+                /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+                    /*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js"
+                )
+                /* harmony import */ var _Pages_User_NavUser_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+                    /*! @/Pages/User/NavUser.js */ "./resources/js/Pages/User/NavUser.js"
+                )
+
+                /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = {
+                    components: {
+                        MainLayout: _Layouts_Main_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+                        HeadInertia: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Head,
+                    },
+                    data: function data() {
+                        return {
+                            nav: (0, _Pages_User_NavUser_js__WEBPACK_IMPORTED_MODULE_2__["default"])("history"),
+                        }
+                    },
+                }
+
+                /***/
+            },
+
+        /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Izin.vue?vue&type=script&lang=js":
+            /*!**********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Izin.vue?vue&type=script&lang=js ***!
+  \**********************************************************************************************************************************************************************************************/
+            /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+                "use strict"
+                __webpack_require__.r(__webpack_exports__)
+                /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+                    /* harmony export */ default: () => __WEBPACK_DEFAULT_EXPORT__,
+                    /* harmony export */
+                })
+                /* harmony import */ var _Layouts_Main_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+                    /*! @/Layouts/Main.vue */ "./resources/js/Layouts/Main.vue"
+                )
+                /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+                    /*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js"
+                )
+                /* harmony import */ var _Pages_User_NavUser_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+                    /*! @/Pages/User/NavUser.js */ "./resources/js/Pages/User/NavUser.js"
+                )
+
+                /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = {
+                    components: {
+                        MainLayout: _Layouts_Main_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+                        HeadInertia: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Head,
+                    },
+                    data: function data() {
+                        return {
+                            nav: (0, _Pages_User_NavUser_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+                                "pengajuan",
+                                "izin"
+                            ),
+                        }
+                    },
+                }
+
+                /***/
+            },
+
+        /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Notification.vue?vue&type=script&lang=js":
+            /*!******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Notification.vue?vue&type=script&lang=js ***!
+  \******************************************************************************************************************************************************************************************************/
+            /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+                "use strict"
+                __webpack_require__.r(__webpack_exports__)
+                /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+                    /* harmony export */ default: () => __WEBPACK_DEFAULT_EXPORT__,
+                    /* harmony export */
+                })
+                /* harmony import */ var _Layouts_Main_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+                    /*! @/Layouts/Main.vue */ "./resources/js/Layouts/Main.vue"
+                )
+                /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+                    /*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js"
+                )
+                /* harmony import */ var _Pages_User_NavUser_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+                    /*! @/Pages/User/NavUser.js */ "./resources/js/Pages/User/NavUser.js"
+                )
+
+                /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = {
+                    components: {
+                        MainLayout: _Layouts_Main_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+                        HeadInertia: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Head,
+                    },
+                    data: function data() {
+                        return {
+                            nav: (0, _Pages_User_NavUser_js__WEBPACK_IMPORTED_MODULE_2__["default"])(),
+                        }
                     },
                 }
 
@@ -25666,7 +25888,7 @@ return withDirectives(h(comp), [
                 )
 
                 var _hoisted_9 = {
-                    class: "p-2",
+                    class: "p-2 bg-base-100 shadow",
                 }
                 var _hoisted_10 = {
                     key: 1,
@@ -25676,25 +25898,43 @@ return withDirectives(h(comp), [
                     class: "navbar-end",
                 }
                 var _hoisted_13 = {
-                    class: "dropdown dropdown-end",
+                    class: "indicator",
                 }
-                var _hoisted_14 = {
-                    tabindex: "0",
-                    class: "btn btn-ghost -lg:btn-circle mr-2 -lg:avatar",
-                }
+
+                var _hoisted_14 = /*#__PURE__*/ (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
+                    "box-icon",
+                    {
+                        type: "regular",
+                        name: "bell",
+                        class: "fill-slate-700 dark:fill-slate-400",
+                    },
+                    null,
+                    -1
+                    /* HOISTED */
+                )
+
                 var _hoisted_15 = {
-                    class: "-lg:hidden mr-2",
+                    class: "dropdown dropdown-end",
                 }
 
                 var _hoisted_16 = /*#__PURE__*/ (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
-                    "div",
+                    "label",
                     {
-                        class: "w-10 rounded-full lg:overflow-hidden",
+                        tabindex: "0",
+                        class: "btn btn-ghost btn-circle mr-2 avatar",
                     },
                     [
-                        /*#__PURE__*/ (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-                            src: "/img/avatar.jpg",
-                        }),
+                        /*#__PURE__*/ (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
+                            "div",
+                            {
+                                class: "w-10 rounded-full",
+                            },
+                            [
+                                /*#__PURE__*/ (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+                                    src: "/img/avatar.jpg",
+                                }),
+                            ]
+                        ),
                     ],
                     -1
                     /* HOISTED */
@@ -25704,8 +25944,11 @@ return withDirectives(h(comp), [
                     tabindex: "0",
                     class: "menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52",
                 }
+                var _hoisted_18 = {
+                    class: "py-3 px-4 text-xs text-base-content",
+                }
 
-                var _hoisted_18 = /*#__PURE__*/ (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
+                var _hoisted_19 = /*#__PURE__*/ (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
                     "li",
                     null,
                     [
@@ -25740,22 +25983,22 @@ return withDirectives(h(comp), [
                     /* HOISTED */
                 )
 
-                var _hoisted_19 = /*#__PURE__*/ (0, vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Logout")
+                var _hoisted_20 = /*#__PURE__*/ (0, vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Logout")
 
-                var _hoisted_20 = {
+                var _hoisted_21 = {
                     key: 1,
                     class: "menu p-4 overflow-y-auto w-80 bg-base-100",
                 }
-                var _hoisted_21 = {
+                var _hoisted_22 = {
                     key: 0,
                 }
-                var _hoisted_22 = ["onClick"]
-                var _hoisted_23 = {
+                var _hoisted_23 = ["onClick"]
+                var _hoisted_24 = {
                     class: "w-full flex items-center",
                 }
-                var _hoisted_24 = ["type", "name"]
+                var _hoisted_25 = ["type", "name"]
 
-                var _hoisted_25 = /*#__PURE__*/ (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
+                var _hoisted_26 = /*#__PURE__*/ (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
                     "svg",
                     {
                         xmlns: "http://www.w3.org/2000/svg",
@@ -25776,17 +26019,17 @@ return withDirectives(h(comp), [
                     /* HOISTED */
                 )
 
-                var _hoisted_26 = [_hoisted_25]
-                var _hoisted_27 = {
+                var _hoisted_27 = [_hoisted_26]
+                var _hoisted_28 = {
                     class: "bg-transparent cursor-default",
                 }
-                var _hoisted_28 = {
+                var _hoisted_29 = {
                     class: "w-full",
                 }
-                var _hoisted_29 = {
+                var _hoisted_30 = {
                     key: 1,
                 }
-                var _hoisted_30 = ["type", "name"]
+                var _hoisted_31 = ["type", "name"]
                 function render(_ctx, _cache, $props, $setup, $data, $options) {
                     return !$props.sidebar
                         ? ((0, vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(),
@@ -25876,7 +26119,15 @@ return withDirectives(h(comp), [
                                                                                   (0,
                                                                                   vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
                                                                                       "a",
-                                                                                      null,
+                                                                                      {
+                                                                                          class: (0,
+                                                                                          vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(
+                                                                                              {
+                                                                                                  "bg-primary hover:bg-primary/75":
+                                                                                                      navitem.active,
+                                                                                              }
+                                                                                          ),
+                                                                                      },
                                                                                       [
                                                                                           (0,
                                                                                           vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
@@ -25903,7 +26154,9 @@ return withDirectives(h(comp), [
                                                                                               /* TEXT */
                                                                                           ),
                                                                                           _hoisted_8,
-                                                                                      ]
+                                                                                      ],
+                                                                                      2
+                                                                                      /* CLASS */
                                                                                   ),
                                                                                   (0,
                                                                                   vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
@@ -25945,6 +26198,13 @@ return withDirectives(h(comp), [
                                                                                                                                         navchild.to
                                                                                                                                     )
                                                                                                                                   : "#",
+                                                                                                                          class: (0,
+                                                                                                                          vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(
+                                                                                                                              {
+                                                                                                                                  "bg-primary hover:bg-primary/75":
+                                                                                                                                      navchild.active,
+                                                                                                                              }
+                                                                                                                          ),
                                                                                                                       },
                                                                                                                       {
                                                                                                                           default:
@@ -25971,6 +26231,7 @@ return withDirectives(h(comp), [
                                                                                                                       /* PROPS, DYNAMIC_SLOTS */
                                                                                                                       [
                                                                                                                           "href",
+                                                                                                                          "class",
                                                                                                                       ]
                                                                                                                   ),
                                                                                                               ]
@@ -26002,6 +26263,13 @@ return withDirectives(h(comp), [
                                                                                                         navitem.to
                                                                                                     )
                                                                                                   : "#",
+                                                                                          class: (0,
+                                                                                          vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(
+                                                                                              {
+                                                                                                  "bg-primary hover:bg-primary/75":
+                                                                                                      navitem.active,
+                                                                                              }
+                                                                                          ),
                                                                                       },
                                                                                       {
                                                                                           default: (0,
@@ -26039,7 +26307,7 @@ return withDirectives(h(comp), [
                                                                                       },
                                                                                       1032,
                                                                                       /* PROPS, DYNAMIC_SLOTS */
-                                                                                      ["href"]
+                                                                                      ["href", "class"]
                                                                                   ),
                                                                               ]
                                                                           )),
@@ -26057,21 +26325,69 @@ return withDirectives(h(comp), [
                                       : (0, vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true),
                               ]),
                               (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [
-                                  (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [
-                                      (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", _hoisted_14, [
+                                  (0, vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
+                                      $setup["Link"],
+                                      {
+                                          href: _ctx.route("notification"),
+                                          class: (0, vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([
+                                              "btn btn-ghost btn-circle mr-3",
+                                              {
+                                                  "bg-primary": _ctx.route().current("notification"),
+                                              },
+                                          ]),
+                                      },
+                                      {
+                                          default: (0, vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                                              return [
+                                                  (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
+                                                      "div",
+                                                      _hoisted_13,
+                                                      [
+                                                          _hoisted_14,
+                                                          (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
+                                                              "span",
+                                                              {
+                                                                  class: (0,
+                                                                  vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([
+                                                                      "badge badge-xs text-base-100 indicator-item",
+                                                                      {
+                                                                          "badge-secondary": _ctx
+                                                                              .route()
+                                                                              .current("notification"),
+                                                                          "badge-primary": !_ctx
+                                                                              .route()
+                                                                              .current("notification"),
+                                                                      },
+                                                                  ]),
+                                                              },
+                                                              "10",
+                                                              2
+                                                              /* CLASS */
+                                                          ),
+                                                      ]
+                                                  ),
+                                              ]
+                                          }),
+                                          _: 1,
+                                          /* STABLE */
+                                      },
+                                      8,
+                                      /* PROPS */
+                                      ["href", "class"]
+                                  ),
+                                  (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [
+                                      _hoisted_16,
+                                      (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_17, [
                                           (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
-                                              "span",
-                                              _hoisted_15,
+                                              "li",
+                                              _hoisted_18,
                                               (0, vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(
                                                   _ctx.$page.props.auth.user.name
                                               ),
                                               1
                                               /* TEXT */
                                           ),
-                                          _hoisted_16,
-                                      ]),
-                                      (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_17, [
-                                          _hoisted_18,
+                                          _hoisted_19,
                                           (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [
                                               (0, vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
                                                   $setup["Link"],
@@ -26083,7 +26399,7 @@ return withDirectives(h(comp), [
                                                   {
                                                       default: (0, vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(
                                                           function () {
-                                                              return [_hoisted_19]
+                                                              return [_hoisted_20]
                                                           }
                                                       ),
                                                       _: 1,
@@ -26099,7 +26415,7 @@ return withDirectives(h(comp), [
                               ]),
                           ]))
                         : ((0, vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(),
-                          (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("ul", _hoisted_20, [
+                          (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("ul", _hoisted_21, [
                               ((0, vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true),
                               (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(
                                   vue__WEBPACK_IMPORTED_MODULE_0__.Fragment,
@@ -26117,7 +26433,7 @@ return withDirectives(h(comp), [
                                                       ? ((0, vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(),
                                                         (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(
                                                             "li",
-                                                            _hoisted_21,
+                                                            _hoisted_22,
                                                             [
                                                                 (0,
                                                                 vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
@@ -26127,12 +26443,19 @@ return withDirectives(h(comp), [
                                                                         onClick: function onClick($event) {
                                                                             return (navitem.active = !navitem.active)
                                                                         },
+                                                                        class: (0,
+                                                                        vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(
+                                                                            {
+                                                                                "bg-primary hover:bg-primary/75":
+                                                                                    navitem.active,
+                                                                            }
+                                                                        ),
                                                                     },
                                                                     [
                                                                         (0,
                                                                         vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
                                                                             "span",
-                                                                            _hoisted_23,
+                                                                            _hoisted_24,
                                                                             [
                                                                                 (0,
                                                                                 vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
@@ -26145,7 +26468,7 @@ return withDirectives(h(comp), [
                                                                                     null,
                                                                                     8,
                                                                                     /* PROPS */
-                                                                                    _hoisted_24
+                                                                                    _hoisted_25
                                                                                 ),
                                                                                 (0,
                                                                                 vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(
@@ -26175,27 +26498,27 @@ return withDirectives(h(comp), [
                                                                                             ]
                                                                                         ),
                                                                                     },
-                                                                                    _hoisted_26,
+                                                                                    _hoisted_27,
                                                                                     2
                                                                                     /* CLASS */
                                                                                 ),
                                                                             ]
                                                                         ),
                                                                     ],
-                                                                    8,
-                                                                    /* PROPS */
-                                                                    _hoisted_22
+                                                                    10,
+                                                                    /* CLASS, PROPS */
+                                                                    _hoisted_23
                                                                 ),
                                                                 (0, vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)(
                                                                     (0,
                                                                     vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
                                                                         "div",
-                                                                        _hoisted_27,
+                                                                        _hoisted_28,
                                                                         [
                                                                             (0,
                                                                             vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
                                                                                 "ul",
-                                                                                _hoisted_28,
+                                                                                _hoisted_29,
                                                                                 [
                                                                                     ((0,
                                                                                     vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(
@@ -26232,6 +26555,13 @@ return withDirectives(h(comp), [
                                                                                                                                   navchild.to
                                                                                                                               )
                                                                                                                             : "#",
+                                                                                                                    class: (0,
+                                                                                                                    vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(
+                                                                                                                        {
+                                                                                                                            "bg-primary hover:bg-primary/75":
+                                                                                                                                navchild.active,
+                                                                                                                        }
+                                                                                                                    ),
                                                                                                                 },
                                                                                                                 {
                                                                                                                     default:
@@ -26256,7 +26586,10 @@ return withDirectives(h(comp), [
                                                                                                                 },
                                                                                                                 1032,
                                                                                                                 /* PROPS, DYNAMIC_SLOTS */
-                                                                                                                ["href"]
+                                                                                                                [
+                                                                                                                    "href",
+                                                                                                                    "class",
+                                                                                                                ]
                                                                                                             ),
                                                                                                         ]
                                                                                                     )
@@ -26284,7 +26617,7 @@ return withDirectives(h(comp), [
                                                       : ((0, vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(),
                                                         (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(
                                                             "li",
-                                                            _hoisted_29,
+                                                            _hoisted_30,
                                                             [
                                                                 (0, vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
                                                                     $setup["Link"],
@@ -26293,6 +26626,13 @@ return withDirectives(h(comp), [
                                                                             navitem.to != null
                                                                                 ? _ctx.route(navitem.to)
                                                                                 : "#",
+                                                                        class: (0,
+                                                                        vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(
+                                                                            {
+                                                                                "bg-primary hover:bg-primary/75":
+                                                                                    navitem.active,
+                                                                            }
+                                                                        ),
                                                                     },
                                                                     {
                                                                         default: (0,
@@ -26310,7 +26650,7 @@ return withDirectives(h(comp), [
                                                                                         null,
                                                                                         8,
                                                                                         /* PROPS */
-                                                                                        _hoisted_30
+                                                                                        _hoisted_31
                                                                                     ),
                                                                                     (0,
                                                                                     vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(
@@ -26330,7 +26670,7 @@ return withDirectives(h(comp), [
                                                                     },
                                                                     1032,
                                                                     /* PROPS, DYNAMIC_SLOTS */
-                                                                    ["href"]
+                                                                    ["href", "class"]
                                                                 ),
                                                             ]
                                                         )),
@@ -26545,7 +26885,7 @@ return withDirectives(h(comp), [
                                     (0, vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
                                         $setup["Navbar"],
                                         {
-                                            nav: $setup.nav,
+                                            nav: $props.nav,
                                         },
                                         {
                                             brand: (0, vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -26572,7 +26912,7 @@ return withDirectives(h(comp), [
                                 (0, vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
                                     $setup["Navbar"],
                                     {
-                                        nav: $setup.nav,
+                                        nav: $props.nav,
                                         sidebar: true,
                                     },
                                     null,
@@ -27243,7 +27583,7 @@ return withDirectives(h(comp), [
                             null,
                             [
                                 (0, vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Head"], {
-                                    title: "Login S1AR",
+                                    title: "Login",
                                 }),
                                 (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [
                                     (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [
@@ -27986,10 +28326,10 @@ return withDirectives(h(comp), [
                 /***/
             },
 
-        /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Mading/All.vue?vue&type=template&id=9f1bca26":
-            /*!***************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Mading/All.vue?vue&type=template&id=9f1bca26 ***!
-  \***************************************************************************************************************************************************************************************************************************************************************************/
+        /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Absensi.vue?vue&type=template&id=b0a61d14":
+            /*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Absensi.vue?vue&type=template&id=b0a61d14 ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************/
             /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
                 "use strict"
                 __webpack_require__.r(__webpack_exports__)
@@ -28003,70 +28343,14 @@ return withDirectives(h(comp), [
 
                 var _hoisted_1 = /*#__PURE__*/ (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
                     "div",
-                    {
-                        class: "text-3xl text-center mb-3 font-bold",
-                    },
-                    "All Mading",
-                    -1
-                    /* HOISTED */
-                )
-
-                var _hoisted_2 = {
-                    class: "overflow-x-auto",
-                }
-                var _hoisted_3 = {
-                    class: "table table-zebra w-full",
-                }
-
-                var _hoisted_4 = /*#__PURE__*/ (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
-                    "thead",
                     null,
-                    [
-                        /*#__PURE__*/ (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [
-                            /*#__PURE__*/ (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th"),
-                            /*#__PURE__*/ (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Judul"),
-                            /*#__PURE__*/ (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
-                                "th",
-                                null,
-                                "Caption"
-                            ),
-                            /*#__PURE__*/ (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Foto"),
-                            /*#__PURE__*/ (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
-                                "th",
-                                null,
-                                "Action"
-                            ),
-                        ]),
-                    ],
-                    -1
-                    /* HOISTED */
-                )
-
-                var _hoisted_5 = /*#__PURE__*/ (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
-                    "th",
-                    null,
-                    [
-                        /*#__PURE__*/ (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
-                            "div",
-                            {
-                                class: "btn btn-success btn-sm mr-2 py-2",
-                            },
-                            "Edit"
-                        ),
-                        /*#__PURE__*/ (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
-                            "div",
-                            {
-                                class: "btn btn-error btn-sm py-2",
-                            },
-                            "Hapus"
-                        ),
-                    ],
+                    "Absensi",
                     -1
                     /* HOISTED */
                 )
 
                 function render(_ctx, _cache, $props, $setup, $data, $options) {
-                    var _component_InertiaHead = (0, vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("InertiaHead")
+                    var _component_HeadInertia = (0, vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("HeadInertia")
 
                     var _component_MainLayout = (0, vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("MainLayout")
 
@@ -28076,118 +28360,25 @@ return withDirectives(h(comp), [
                             vue__WEBPACK_IMPORTED_MODULE_0__.Fragment,
                             null,
                             [
-                                (0, vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_InertiaHead, {
-                                    title: "Mading",
+                                (0, vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_HeadInertia, {
+                                    title: "Absensi",
                                 }),
-                                (0, vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_MainLayout, null, {
-                                    default: (0, vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-                                        return [
-                                            _hoisted_1,
-                                            (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
-                                                "div",
-                                                _hoisted_2,
-                                                [
-                                                    (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
-                                                        "table",
-                                                        _hoisted_3,
-                                                        [
-                                                            (0, vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(
-                                                                " head "
-                                                            ),
-                                                            _hoisted_4,
-                                                            (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
-                                                                "tbody",
-                                                                null,
-                                                                [
-                                                                    ((0, vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(
-                                                                        true
-                                                                    ),
-                                                                    (0,
-                                                                    vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(
-                                                                        vue__WEBPACK_IMPORTED_MODULE_0__.Fragment,
-                                                                        null,
-                                                                        (0,
-                                                                        vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(
-                                                                            $props.madings,
-                                                                            function (mading) {
-                                                                                return (
-                                                                                    (0,
-                                                                                    vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(),
-                                                                                    (0,
-                                                                                    vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(
-                                                                                        "tr",
-                                                                                        {
-                                                                                            key: mading.id,
-                                                                                            class: "hover",
-                                                                                        },
-                                                                                        [
-                                                                                            (0,
-                                                                                            vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
-                                                                                                "th",
-                                                                                                null,
-                                                                                                (0,
-                                                                                                vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(
-                                                                                                    mading.id
-                                                                                                ),
-                                                                                                1
-                                                                                                /* TEXT */
-                                                                                            ),
-                                                                                            (0,
-                                                                                            vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
-                                                                                                "th",
-                                                                                                null,
-                                                                                                (0,
-                                                                                                vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(
-                                                                                                    mading.judul
-                                                                                                ),
-                                                                                                1
-                                                                                                /* TEXT */
-                                                                                            ),
-                                                                                            (0,
-                                                                                            vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
-                                                                                                "th",
-                                                                                                null,
-                                                                                                (0,
-                                                                                                vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(
-                                                                                                    mading.caption.substr(
-                                                                                                        0,
-                                                                                                        100
-                                                                                                    ) + "..."
-                                                                                                ),
-                                                                                                1
-                                                                                                /* TEXT */
-                                                                                            ),
-                                                                                            (0,
-                                                                                            vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
-                                                                                                "th",
-                                                                                                null,
-                                                                                                (0,
-                                                                                                vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(
-                                                                                                    mading.foto
-                                                                                                ),
-                                                                                                1
-                                                                                                /* TEXT */
-                                                                                            ),
-                                                                                            _hoisted_5,
-                                                                                        ]
-                                                                                    )
-                                                                                )
-                                                                            }
-                                                                        ),
-                                                                        128
-                                                                        /* KEYED_FRAGMENT */
-                                                                    )),
-                                                                ]
-                                                            ),
-                                                        ]
-                                                    ),
-                                                ]
-                                            ),
-                                        ]
-                                    }),
-                                    _: 1,
-                                    /* STABLE */
-                                }),
+                                (0, vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
+                                    _component_MainLayout,
+                                    {
+                                        nav: $data.nav,
+                                    },
+                                    {
+                                        default: (0, vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                                            return [_hoisted_1]
+                                        }),
+                                        _: 1,
+                                        /* STABLE */
+                                    },
+                                    8,
+                                    /* PROPS */
+                                    ["nav"]
+                                ),
                             ],
                             64
                             /* STABLE_FRAGMENT */
@@ -28198,9 +28389,9 @@ return withDirectives(h(comp), [
                 /***/
             },
 
-        /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Mading/Create.vue?vue&type=template&id=3f0c11e0":
+        /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Approval.vue?vue&type=template&id=194669ce":
             /*!******************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Mading/Create.vue?vue&type=template&id=3f0c11e0 ***!
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Approval.vue?vue&type=template&id=194669ce ***!
   \******************************************************************************************************************************************************************************************************************************************************************************/
             /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
                 "use strict"
@@ -28213,17 +28404,44 @@ return withDirectives(h(comp), [
                     /*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js"
                 )
 
+                var _hoisted_1 = /*#__PURE__*/ (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
+                    "div",
+                    null,
+                    "Approval",
+                    -1
+                    /* HOISTED */
+                )
+
                 function render(_ctx, _cache, $props, $setup, $data, $options) {
+                    var _component_HeadInertia = (0, vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("HeadInertia")
+
+                    var _component_MainLayout = (0, vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("MainLayout")
+
                     return (
                         (0, vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(),
                         (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(
                             vue__WEBPACK_IMPORTED_MODULE_0__.Fragment,
                             null,
                             [
-                                (0, vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Head"], {
-                                    title: "Mading",
+                                (0, vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_HeadInertia, {
+                                    title: "Approval",
                                 }),
-                                (0, vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["MainLayout"]),
+                                (0, vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
+                                    _component_MainLayout,
+                                    {
+                                        nav: $data.nav,
+                                    },
+                                    {
+                                        default: (0, vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                                            return [_hoisted_1]
+                                        }),
+                                        _: 1,
+                                        /* STABLE */
+                                    },
+                                    8,
+                                    /* PROPS */
+                                    ["nav"]
+                                ),
                             ],
                             64
                             /* STABLE_FRAGMENT */
@@ -28234,9 +28452,198 @@ return withDirectives(h(comp), [
                 /***/
             },
 
-        /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Mading/Input.vue?vue&type=template&id=1ac1bf96":
+        /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Cuti.vue?vue&type=template&id=db3f6d1c":
+            /*!**************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Cuti.vue?vue&type=template&id=db3f6d1c ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************/
+            /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+                "use strict"
+                __webpack_require__.r(__webpack_exports__)
+                /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+                    /* harmony export */ render: () => /* binding */ render,
+                    /* harmony export */
+                })
+                /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+                    /*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js"
+                )
+
+                var _hoisted_1 = /*#__PURE__*/ (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
+                    "div",
+                    null,
+                    "Cuti",
+                    -1
+                    /* HOISTED */
+                )
+
+                function render(_ctx, _cache, $props, $setup, $data, $options) {
+                    var _component_HeadInertia = (0, vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("HeadInertia")
+
+                    var _component_MainLayout = (0, vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("MainLayout")
+
+                    return (
+                        (0, vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(),
+                        (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(
+                            vue__WEBPACK_IMPORTED_MODULE_0__.Fragment,
+                            null,
+                            [
+                                (0, vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_HeadInertia, {
+                                    title: "Cuti",
+                                }),
+                                (0, vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
+                                    _component_MainLayout,
+                                    {
+                                        nav: $data.nav,
+                                    },
+                                    {
+                                        default: (0, vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                                            return [_hoisted_1]
+                                        }),
+                                        _: 1,
+                                        /* STABLE */
+                                    },
+                                    8,
+                                    /* PROPS */
+                                    ["nav"]
+                                ),
+                            ],
+                            64
+                            /* STABLE_FRAGMENT */
+                        )
+                    )
+                }
+
+                /***/
+            },
+
+        /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Dashboard.vue?vue&type=template&id=49ea5719":
+            /*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Dashboard.vue?vue&type=template&id=49ea5719 ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************/
+            /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+                "use strict"
+                __webpack_require__.r(__webpack_exports__)
+                /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+                    /* harmony export */ render: () => /* binding */ render,
+                    /* harmony export */
+                })
+                /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+                    /*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js"
+                )
+
+                var _hoisted_1 = /*#__PURE__*/ (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
+                    "div",
+                    null,
+                    "Dashboard",
+                    -1
+                    /* HOISTED */
+                )
+
+                function render(_ctx, _cache, $props, $setup, $data, $options) {
+                    var _component_HeadInertia = (0, vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("HeadInertia")
+
+                    var _component_MainLayout = (0, vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("MainLayout")
+
+                    return (
+                        (0, vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(),
+                        (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(
+                            vue__WEBPACK_IMPORTED_MODULE_0__.Fragment,
+                            null,
+                            [
+                                (0, vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_HeadInertia, {
+                                    title: "Dashboard",
+                                }),
+                                (0, vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
+                                    _component_MainLayout,
+                                    {
+                                        nav: $data.nav,
+                                    },
+                                    {
+                                        default: (0, vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                                            return [_hoisted_1]
+                                        }),
+                                        _: 1,
+                                        /* STABLE */
+                                    },
+                                    8,
+                                    /* PROPS */
+                                    ["nav"]
+                                ),
+                            ],
+                            64
+                            /* STABLE_FRAGMENT */
+                        )
+                    )
+                }
+
+                /***/
+            },
+
+        /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Datadiri.vue?vue&type=template&id=66097231":
+            /*!******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Datadiri.vue?vue&type=template&id=66097231 ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************/
+            /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+                "use strict"
+                __webpack_require__.r(__webpack_exports__)
+                /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+                    /* harmony export */ render: () => /* binding */ render,
+                    /* harmony export */
+                })
+                /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+                    /*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js"
+                )
+
+                var _hoisted_1 = /*#__PURE__*/ (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
+                    "div",
+                    null,
+                    "Data Diri",
+                    -1
+                    /* HOISTED */
+                )
+
+                function render(_ctx, _cache, $props, $setup, $data, $options) {
+                    var _component_HeadInertia = (0, vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("HeadInertia")
+
+                    var _component_MainLayout = (0, vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("MainLayout")
+
+                    return (
+                        (0, vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(),
+                        (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(
+                            vue__WEBPACK_IMPORTED_MODULE_0__.Fragment,
+                            null,
+                            [
+                                (0, vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_HeadInertia, {
+                                    title: "Data Diri",
+                                }),
+                                (0, vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
+                                    _component_MainLayout,
+                                    {
+                                        nav: $data.nav,
+                                    },
+                                    {
+                                        default: (0, vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                                            return [_hoisted_1]
+                                        }),
+                                        _: 1,
+                                        /* STABLE */
+                                    },
+                                    8,
+                                    /* PROPS */
+                                    ["nav"]
+                                ),
+                            ],
+                            64
+                            /* STABLE_FRAGMENT */
+                        )
+                    )
+                }
+
+                /***/
+            },
+
+        /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/History.vue?vue&type=template&id=9b972f4e":
             /*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Mading/Input.vue?vue&type=template&id=1ac1bf96 ***!
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/History.vue?vue&type=template&id=9b972f4e ***!
   \*****************************************************************************************************************************************************************************************************************************************************************************/
             /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
                 "use strict"
@@ -28249,17 +28656,44 @@ return withDirectives(h(comp), [
                     /*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js"
                 )
 
+                var _hoisted_1 = /*#__PURE__*/ (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
+                    "div",
+                    null,
+                    "History",
+                    -1
+                    /* HOISTED */
+                )
+
                 function render(_ctx, _cache, $props, $setup, $data, $options) {
+                    var _component_HeadInertia = (0, vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("HeadInertia")
+
+                    var _component_MainLayout = (0, vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("MainLayout")
+
                     return (
                         (0, vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(),
                         (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(
                             vue__WEBPACK_IMPORTED_MODULE_0__.Fragment,
                             null,
                             [
-                                (0, vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Head"], {
-                                    title: "Mading",
+                                (0, vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_HeadInertia, {
+                                    title: "History",
                                 }),
-                                (0, vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["MainLayout"]),
+                                (0, vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
+                                    _component_MainLayout,
+                                    {
+                                        nav: $data.nav,
+                                    },
+                                    {
+                                        default: (0, vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                                            return [_hoisted_1]
+                                        }),
+                                        _: 1,
+                                        /* STABLE */
+                                    },
+                                    8,
+                                    /* PROPS */
+                                    ["nav"]
+                                ),
                             ],
                             64
                             /* STABLE_FRAGMENT */
@@ -28270,10 +28704,10 @@ return withDirectives(h(comp), [
                 /***/
             },
 
-        /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Mading/One.vue?vue&type=template&id=cfdf359c":
-            /*!***************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Mading/One.vue?vue&type=template&id=cfdf359c ***!
-  \***************************************************************************************************************************************************************************************************************************************************************************/
+        /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Izin.vue?vue&type=template&id=10b0b4be":
+            /*!**************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Izin.vue?vue&type=template&id=10b0b4be ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************/
             /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
                 "use strict"
                 __webpack_require__.r(__webpack_exports__)
@@ -28285,17 +28719,107 @@ return withDirectives(h(comp), [
                     /*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js"
                 )
 
+                var _hoisted_1 = /*#__PURE__*/ (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
+                    "div",
+                    null,
+                    "Izin",
+                    -1
+                    /* HOISTED */
+                )
+
                 function render(_ctx, _cache, $props, $setup, $data, $options) {
+                    var _component_HeadInertia = (0, vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("HeadInertia")
+
+                    var _component_MainLayout = (0, vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("MainLayout")
+
                     return (
                         (0, vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(),
                         (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(
                             vue__WEBPACK_IMPORTED_MODULE_0__.Fragment,
                             null,
                             [
-                                (0, vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Head"], {
-                                    title: "Mading",
+                                (0, vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_HeadInertia, {
+                                    title: "Izin",
                                 }),
-                                (0, vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["MainLayout"]),
+                                (0, vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
+                                    _component_MainLayout,
+                                    {
+                                        nav: $data.nav,
+                                    },
+                                    {
+                                        default: (0, vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                                            return [_hoisted_1]
+                                        }),
+                                        _: 1,
+                                        /* STABLE */
+                                    },
+                                    8,
+                                    /* PROPS */
+                                    ["nav"]
+                                ),
+                            ],
+                            64
+                            /* STABLE_FRAGMENT */
+                        )
+                    )
+                }
+
+                /***/
+            },
+
+        /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Notification.vue?vue&type=template&id=7ba986f6":
+            /*!**********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Notification.vue?vue&type=template&id=7ba986f6 ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************/
+            /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+                "use strict"
+                __webpack_require__.r(__webpack_exports__)
+                /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+                    /* harmony export */ render: () => /* binding */ render,
+                    /* harmony export */
+                })
+                /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+                    /*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js"
+                )
+
+                var _hoisted_1 = /*#__PURE__*/ (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(
+                    "div",
+                    null,
+                    "Notification",
+                    -1
+                    /* HOISTED */
+                )
+
+                function render(_ctx, _cache, $props, $setup, $data, $options) {
+                    var _component_HeadInertia = (0, vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("HeadInertia")
+
+                    var _component_MainLayout = (0, vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("MainLayout")
+
+                    return (
+                        (0, vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(),
+                        (0, vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(
+                            vue__WEBPACK_IMPORTED_MODULE_0__.Fragment,
+                            null,
+                            [
+                                (0, vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_HeadInertia, {
+                                    title: "Notification",
+                                }),
+                                (0, vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
+                                    _component_MainLayout,
+                                    {
+                                        nav: $data.nav,
+                                    },
+                                    {
+                                        default: (0, vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                                            return [_hoisted_1]
+                                        }),
+                                        _: 1,
+                                        /* STABLE */
+                                    },
+                                    8,
+                                    /* PROPS */
+                                    ["nav"]
+                                ),
                             ],
                             64
                             /* STABLE_FRAGMENT */
@@ -53831,89 +54355,9 @@ return withDirectives(h(comp), [
                 /***/
             },
 
-        /***/ "./resources/js/Pages/Mading/All.vue":
-            /*!*******************************************!*\
-  !*** ./resources/js/Pages/Mading/All.vue ***!
-  \*******************************************/
-            /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-                "use strict"
-                __webpack_require__.r(__webpack_exports__)
-                /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-                    /* harmony export */ default: () => __WEBPACK_DEFAULT_EXPORT__,
-                    /* harmony export */
-                })
-                /* harmony import */ var _All_vue_vue_type_template_id_9f1bca26__WEBPACK_IMPORTED_MODULE_0__ =
-                    __webpack_require__(
-                        /*! ./All.vue?vue&type=template&id=9f1bca26 */ "./resources/js/Pages/Mading/All.vue?vue&type=template&id=9f1bca26"
-                    )
-                /* harmony import */ var _All_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ =
-                    __webpack_require__(
-                        /*! ./All.vue?vue&type=script&lang=js */ "./resources/js/Pages/Mading/All.vue?vue&type=script&lang=js"
-                    )
-                /* harmony import */ var C_Users_itd_magang01_Projects_Test1_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ =
-                    __webpack_require__(
-                        /*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js"
-                    )
-
-                const __exports__ = /*#__PURE__*/ (0,
-                C_Users_itd_magang01_Projects_Test1_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__[
-                    "default"
-                ])(_All_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [
-                    ["render", _All_vue_vue_type_template_id_9f1bca26__WEBPACK_IMPORTED_MODULE_0__.render],
-                    ["__file", "resources/js/Pages/Mading/All.vue"],
-                ])
-                /* hot reload */
-                if (false) {
-                }
-
-                /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = __exports__
-
-                /***/
-            },
-
-        /***/ "./resources/js/Pages/Mading/Create.vue":
-            /*!**********************************************!*\
-  !*** ./resources/js/Pages/Mading/Create.vue ***!
-  \**********************************************/
-            /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-                "use strict"
-                __webpack_require__.r(__webpack_exports__)
-                /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-                    /* harmony export */ default: () => __WEBPACK_DEFAULT_EXPORT__,
-                    /* harmony export */
-                })
-                /* harmony import */ var _Create_vue_vue_type_template_id_3f0c11e0__WEBPACK_IMPORTED_MODULE_0__ =
-                    __webpack_require__(
-                        /*! ./Create.vue?vue&type=template&id=3f0c11e0 */ "./resources/js/Pages/Mading/Create.vue?vue&type=template&id=3f0c11e0"
-                    )
-                /* harmony import */ var _Create_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ =
-                    __webpack_require__(
-                        /*! ./Create.vue?vue&type=script&setup=true&lang=js */ "./resources/js/Pages/Mading/Create.vue?vue&type=script&setup=true&lang=js"
-                    )
-                /* harmony import */ var C_Users_itd_magang01_Projects_Test1_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ =
-                    __webpack_require__(
-                        /*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js"
-                    )
-
-                const __exports__ = /*#__PURE__*/ (0,
-                C_Users_itd_magang01_Projects_Test1_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__[
-                    "default"
-                ])(_Create_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [
-                    ["render", _Create_vue_vue_type_template_id_3f0c11e0__WEBPACK_IMPORTED_MODULE_0__.render],
-                    ["__file", "resources/js/Pages/Mading/Create.vue"],
-                ])
-                /* hot reload */
-                if (false) {
-                }
-
-                /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = __exports__
-
-                /***/
-            },
-
-        /***/ "./resources/js/Pages/Mading/Input.vue":
+        /***/ "./resources/js/Pages/User/Absensi.vue":
             /*!*********************************************!*\
-  !*** ./resources/js/Pages/Mading/Input.vue ***!
+  !*** ./resources/js/Pages/User/Absensi.vue ***!
   \*********************************************/
             /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
                 "use strict"
@@ -53922,13 +54366,13 @@ return withDirectives(h(comp), [
                     /* harmony export */ default: () => __WEBPACK_DEFAULT_EXPORT__,
                     /* harmony export */
                 })
-                /* harmony import */ var _Input_vue_vue_type_template_id_1ac1bf96__WEBPACK_IMPORTED_MODULE_0__ =
+                /* harmony import */ var _Absensi_vue_vue_type_template_id_b0a61d14__WEBPACK_IMPORTED_MODULE_0__ =
                     __webpack_require__(
-                        /*! ./Input.vue?vue&type=template&id=1ac1bf96 */ "./resources/js/Pages/Mading/Input.vue?vue&type=template&id=1ac1bf96"
+                        /*! ./Absensi.vue?vue&type=template&id=b0a61d14 */ "./resources/js/Pages/User/Absensi.vue?vue&type=template&id=b0a61d14"
                     )
-                /* harmony import */ var _Input_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ =
+                /* harmony import */ var _Absensi_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ =
                     __webpack_require__(
-                        /*! ./Input.vue?vue&type=script&setup=true&lang=js */ "./resources/js/Pages/Mading/Input.vue?vue&type=script&setup=true&lang=js"
+                        /*! ./Absensi.vue?vue&type=script&lang=js */ "./resources/js/Pages/User/Absensi.vue?vue&type=script&lang=js"
                     )
                 /* harmony import */ var C_Users_itd_magang01_Projects_Test1_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ =
                     __webpack_require__(
@@ -53938,9 +54382,9 @@ return withDirectives(h(comp), [
                 const __exports__ = /*#__PURE__*/ (0,
                 C_Users_itd_magang01_Projects_Test1_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__[
                     "default"
-                ])(_Input_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [
-                    ["render", _Input_vue_vue_type_template_id_1ac1bf96__WEBPACK_IMPORTED_MODULE_0__.render],
-                    ["__file", "resources/js/Pages/Mading/Input.vue"],
+                ])(_Absensi_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [
+                    ["render", _Absensi_vue_vue_type_template_id_b0a61d14__WEBPACK_IMPORTED_MODULE_0__.render],
+                    ["__file", "resources/js/Pages/User/Absensi.vue"],
                 ])
                 /* hot reload */
                 if (false) {
@@ -53951,10 +54395,10 @@ return withDirectives(h(comp), [
                 /***/
             },
 
-        /***/ "./resources/js/Pages/Mading/One.vue":
-            /*!*******************************************!*\
-  !*** ./resources/js/Pages/Mading/One.vue ***!
-  \*******************************************/
+        /***/ "./resources/js/Pages/User/Approval.vue":
+            /*!**********************************************!*\
+  !*** ./resources/js/Pages/User/Approval.vue ***!
+  \**********************************************/
             /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
                 "use strict"
                 __webpack_require__.r(__webpack_exports__)
@@ -53962,13 +54406,13 @@ return withDirectives(h(comp), [
                     /* harmony export */ default: () => __WEBPACK_DEFAULT_EXPORT__,
                     /* harmony export */
                 })
-                /* harmony import */ var _One_vue_vue_type_template_id_cfdf359c__WEBPACK_IMPORTED_MODULE_0__ =
+                /* harmony import */ var _Approval_vue_vue_type_template_id_194669ce__WEBPACK_IMPORTED_MODULE_0__ =
                     __webpack_require__(
-                        /*! ./One.vue?vue&type=template&id=cfdf359c */ "./resources/js/Pages/Mading/One.vue?vue&type=template&id=cfdf359c"
+                        /*! ./Approval.vue?vue&type=template&id=194669ce */ "./resources/js/Pages/User/Approval.vue?vue&type=template&id=194669ce"
                     )
-                /* harmony import */ var _One_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ =
+                /* harmony import */ var _Approval_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ =
                     __webpack_require__(
-                        /*! ./One.vue?vue&type=script&setup=true&lang=js */ "./resources/js/Pages/Mading/One.vue?vue&type=script&setup=true&lang=js"
+                        /*! ./Approval.vue?vue&type=script&lang=js */ "./resources/js/Pages/User/Approval.vue?vue&type=script&lang=js"
                     )
                 /* harmony import */ var C_Users_itd_magang01_Projects_Test1_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ =
                     __webpack_require__(
@@ -53978,9 +54422,249 @@ return withDirectives(h(comp), [
                 const __exports__ = /*#__PURE__*/ (0,
                 C_Users_itd_magang01_Projects_Test1_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__[
                     "default"
-                ])(_One_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [
-                    ["render", _One_vue_vue_type_template_id_cfdf359c__WEBPACK_IMPORTED_MODULE_0__.render],
-                    ["__file", "resources/js/Pages/Mading/One.vue"],
+                ])(_Approval_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [
+                    ["render", _Approval_vue_vue_type_template_id_194669ce__WEBPACK_IMPORTED_MODULE_0__.render],
+                    ["__file", "resources/js/Pages/User/Approval.vue"],
+                ])
+                /* hot reload */
+                if (false) {
+                }
+
+                /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = __exports__
+
+                /***/
+            },
+
+        /***/ "./resources/js/Pages/User/Cuti.vue":
+            /*!******************************************!*\
+  !*** ./resources/js/Pages/User/Cuti.vue ***!
+  \******************************************/
+            /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+                "use strict"
+                __webpack_require__.r(__webpack_exports__)
+                /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+                    /* harmony export */ default: () => __WEBPACK_DEFAULT_EXPORT__,
+                    /* harmony export */
+                })
+                /* harmony import */ var _Cuti_vue_vue_type_template_id_db3f6d1c__WEBPACK_IMPORTED_MODULE_0__ =
+                    __webpack_require__(
+                        /*! ./Cuti.vue?vue&type=template&id=db3f6d1c */ "./resources/js/Pages/User/Cuti.vue?vue&type=template&id=db3f6d1c"
+                    )
+                /* harmony import */ var _Cuti_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ =
+                    __webpack_require__(
+                        /*! ./Cuti.vue?vue&type=script&lang=js */ "./resources/js/Pages/User/Cuti.vue?vue&type=script&lang=js"
+                    )
+                /* harmony import */ var C_Users_itd_magang01_Projects_Test1_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ =
+                    __webpack_require__(
+                        /*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js"
+                    )
+
+                const __exports__ = /*#__PURE__*/ (0,
+                C_Users_itd_magang01_Projects_Test1_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__[
+                    "default"
+                ])(_Cuti_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [
+                    ["render", _Cuti_vue_vue_type_template_id_db3f6d1c__WEBPACK_IMPORTED_MODULE_0__.render],
+                    ["__file", "resources/js/Pages/User/Cuti.vue"],
+                ])
+                /* hot reload */
+                if (false) {
+                }
+
+                /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = __exports__
+
+                /***/
+            },
+
+        /***/ "./resources/js/Pages/User/Dashboard.vue":
+            /*!***********************************************!*\
+  !*** ./resources/js/Pages/User/Dashboard.vue ***!
+  \***********************************************/
+            /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+                "use strict"
+                __webpack_require__.r(__webpack_exports__)
+                /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+                    /* harmony export */ default: () => __WEBPACK_DEFAULT_EXPORT__,
+                    /* harmony export */
+                })
+                /* harmony import */ var _Dashboard_vue_vue_type_template_id_49ea5719__WEBPACK_IMPORTED_MODULE_0__ =
+                    __webpack_require__(
+                        /*! ./Dashboard.vue?vue&type=template&id=49ea5719 */ "./resources/js/Pages/User/Dashboard.vue?vue&type=template&id=49ea5719"
+                    )
+                /* harmony import */ var _Dashboard_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ =
+                    __webpack_require__(
+                        /*! ./Dashboard.vue?vue&type=script&lang=js */ "./resources/js/Pages/User/Dashboard.vue?vue&type=script&lang=js"
+                    )
+                /* harmony import */ var C_Users_itd_magang01_Projects_Test1_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ =
+                    __webpack_require__(
+                        /*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js"
+                    )
+
+                const __exports__ = /*#__PURE__*/ (0,
+                C_Users_itd_magang01_Projects_Test1_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__[
+                    "default"
+                ])(_Dashboard_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [
+                    ["render", _Dashboard_vue_vue_type_template_id_49ea5719__WEBPACK_IMPORTED_MODULE_0__.render],
+                    ["__file", "resources/js/Pages/User/Dashboard.vue"],
+                ])
+                /* hot reload */
+                if (false) {
+                }
+
+                /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = __exports__
+
+                /***/
+            },
+
+        /***/ "./resources/js/Pages/User/Datadiri.vue":
+            /*!**********************************************!*\
+  !*** ./resources/js/Pages/User/Datadiri.vue ***!
+  \**********************************************/
+            /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+                "use strict"
+                __webpack_require__.r(__webpack_exports__)
+                /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+                    /* harmony export */ default: () => __WEBPACK_DEFAULT_EXPORT__,
+                    /* harmony export */
+                })
+                /* harmony import */ var _Datadiri_vue_vue_type_template_id_66097231__WEBPACK_IMPORTED_MODULE_0__ =
+                    __webpack_require__(
+                        /*! ./Datadiri.vue?vue&type=template&id=66097231 */ "./resources/js/Pages/User/Datadiri.vue?vue&type=template&id=66097231"
+                    )
+                /* harmony import */ var _Datadiri_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ =
+                    __webpack_require__(
+                        /*! ./Datadiri.vue?vue&type=script&lang=js */ "./resources/js/Pages/User/Datadiri.vue?vue&type=script&lang=js"
+                    )
+                /* harmony import */ var C_Users_itd_magang01_Projects_Test1_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ =
+                    __webpack_require__(
+                        /*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js"
+                    )
+
+                const __exports__ = /*#__PURE__*/ (0,
+                C_Users_itd_magang01_Projects_Test1_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__[
+                    "default"
+                ])(_Datadiri_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [
+                    ["render", _Datadiri_vue_vue_type_template_id_66097231__WEBPACK_IMPORTED_MODULE_0__.render],
+                    ["__file", "resources/js/Pages/User/Datadiri.vue"],
+                ])
+                /* hot reload */
+                if (false) {
+                }
+
+                /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = __exports__
+
+                /***/
+            },
+
+        /***/ "./resources/js/Pages/User/History.vue":
+            /*!*********************************************!*\
+  !*** ./resources/js/Pages/User/History.vue ***!
+  \*********************************************/
+            /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+                "use strict"
+                __webpack_require__.r(__webpack_exports__)
+                /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+                    /* harmony export */ default: () => __WEBPACK_DEFAULT_EXPORT__,
+                    /* harmony export */
+                })
+                /* harmony import */ var _History_vue_vue_type_template_id_9b972f4e__WEBPACK_IMPORTED_MODULE_0__ =
+                    __webpack_require__(
+                        /*! ./History.vue?vue&type=template&id=9b972f4e */ "./resources/js/Pages/User/History.vue?vue&type=template&id=9b972f4e"
+                    )
+                /* harmony import */ var _History_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ =
+                    __webpack_require__(
+                        /*! ./History.vue?vue&type=script&lang=js */ "./resources/js/Pages/User/History.vue?vue&type=script&lang=js"
+                    )
+                /* harmony import */ var C_Users_itd_magang01_Projects_Test1_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ =
+                    __webpack_require__(
+                        /*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js"
+                    )
+
+                const __exports__ = /*#__PURE__*/ (0,
+                C_Users_itd_magang01_Projects_Test1_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__[
+                    "default"
+                ])(_History_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [
+                    ["render", _History_vue_vue_type_template_id_9b972f4e__WEBPACK_IMPORTED_MODULE_0__.render],
+                    ["__file", "resources/js/Pages/User/History.vue"],
+                ])
+                /* hot reload */
+                if (false) {
+                }
+
+                /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = __exports__
+
+                /***/
+            },
+
+        /***/ "./resources/js/Pages/User/Izin.vue":
+            /*!******************************************!*\
+  !*** ./resources/js/Pages/User/Izin.vue ***!
+  \******************************************/
+            /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+                "use strict"
+                __webpack_require__.r(__webpack_exports__)
+                /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+                    /* harmony export */ default: () => __WEBPACK_DEFAULT_EXPORT__,
+                    /* harmony export */
+                })
+                /* harmony import */ var _Izin_vue_vue_type_template_id_10b0b4be__WEBPACK_IMPORTED_MODULE_0__ =
+                    __webpack_require__(
+                        /*! ./Izin.vue?vue&type=template&id=10b0b4be */ "./resources/js/Pages/User/Izin.vue?vue&type=template&id=10b0b4be"
+                    )
+                /* harmony import */ var _Izin_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ =
+                    __webpack_require__(
+                        /*! ./Izin.vue?vue&type=script&lang=js */ "./resources/js/Pages/User/Izin.vue?vue&type=script&lang=js"
+                    )
+                /* harmony import */ var C_Users_itd_magang01_Projects_Test1_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ =
+                    __webpack_require__(
+                        /*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js"
+                    )
+
+                const __exports__ = /*#__PURE__*/ (0,
+                C_Users_itd_magang01_Projects_Test1_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__[
+                    "default"
+                ])(_Izin_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [
+                    ["render", _Izin_vue_vue_type_template_id_10b0b4be__WEBPACK_IMPORTED_MODULE_0__.render],
+                    ["__file", "resources/js/Pages/User/Izin.vue"],
+                ])
+                /* hot reload */
+                if (false) {
+                }
+
+                /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = __exports__
+
+                /***/
+            },
+
+        /***/ "./resources/js/Pages/User/Notification.vue":
+            /*!**************************************************!*\
+  !*** ./resources/js/Pages/User/Notification.vue ***!
+  \**************************************************/
+            /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+                "use strict"
+                __webpack_require__.r(__webpack_exports__)
+                /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+                    /* harmony export */ default: () => __WEBPACK_DEFAULT_EXPORT__,
+                    /* harmony export */
+                })
+                /* harmony import */ var _Notification_vue_vue_type_template_id_7ba986f6__WEBPACK_IMPORTED_MODULE_0__ =
+                    __webpack_require__(
+                        /*! ./Notification.vue?vue&type=template&id=7ba986f6 */ "./resources/js/Pages/User/Notification.vue?vue&type=template&id=7ba986f6"
+                    )
+                /* harmony import */ var _Notification_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ =
+                    __webpack_require__(
+                        /*! ./Notification.vue?vue&type=script&lang=js */ "./resources/js/Pages/User/Notification.vue?vue&type=script&lang=js"
+                    )
+                /* harmony import */ var C_Users_itd_magang01_Projects_Test1_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ =
+                    __webpack_require__(
+                        /*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js"
+                    )
+
+                const __exports__ = /*#__PURE__*/ (0,
+                C_Users_itd_magang01_Projects_Test1_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__[
+                    "default"
+                ])(_Notification_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [
+                    ["render", _Notification_vue_vue_type_template_id_7ba986f6__WEBPACK_IMPORTED_MODULE_0__.render],
+                    ["__file", "resources/js/Pages/User/Notification.vue"],
                 ])
                 /* hot reload */
                 if (false) {
@@ -54413,89 +55097,177 @@ return withDirectives(h(comp), [
                 /***/
             },
 
-        /***/ "./resources/js/Pages/Mading/All.vue?vue&type=script&lang=js":
-            /*!*******************************************************************!*\
-  !*** ./resources/js/Pages/Mading/All.vue?vue&type=script&lang=js ***!
-  \*******************************************************************/
+        /***/ "./resources/js/Pages/User/Absensi.vue?vue&type=script&lang=js":
+            /*!*********************************************************************!*\
+  !*** ./resources/js/Pages/User/Absensi.vue?vue&type=script&lang=js ***!
+  \*********************************************************************/
             /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
                 "use strict"
                 __webpack_require__.r(__webpack_exports__)
                 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
                     /* harmony export */ default: () =>
-                        /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_All_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__[
+                        /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Absensi_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__[
                             "default"
                         ],
                     /* harmony export */
                 })
-                /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_All_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ =
+                /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Absensi_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ =
                     __webpack_require__(
-                        /*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./All.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Mading/All.vue?vue&type=script&lang=js"
+                        /*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Absensi.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Absensi.vue?vue&type=script&lang=js"
                     )
 
                 /***/
             },
 
-        /***/ "./resources/js/Pages/Mading/Create.vue?vue&type=script&setup=true&lang=js":
-            /*!*********************************************************************************!*\
-  !*** ./resources/js/Pages/Mading/Create.vue?vue&type=script&setup=true&lang=js ***!
-  \*********************************************************************************/
+        /***/ "./resources/js/Pages/User/Approval.vue?vue&type=script&lang=js":
+            /*!**********************************************************************!*\
+  !*** ./resources/js/Pages/User/Approval.vue?vue&type=script&lang=js ***!
+  \**********************************************************************/
             /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
                 "use strict"
                 __webpack_require__.r(__webpack_exports__)
                 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
                     /* harmony export */ default: () =>
-                        /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Create_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__[
+                        /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Approval_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__[
                             "default"
                         ],
                     /* harmony export */
                 })
-                /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Create_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ =
+                /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Approval_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ =
                     __webpack_require__(
-                        /*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Create.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Mading/Create.vue?vue&type=script&setup=true&lang=js"
+                        /*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Approval.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Approval.vue?vue&type=script&lang=js"
                     )
 
                 /***/
             },
 
-        /***/ "./resources/js/Pages/Mading/Input.vue?vue&type=script&setup=true&lang=js":
-            /*!********************************************************************************!*\
-  !*** ./resources/js/Pages/Mading/Input.vue?vue&type=script&setup=true&lang=js ***!
-  \********************************************************************************/
+        /***/ "./resources/js/Pages/User/Cuti.vue?vue&type=script&lang=js":
+            /*!******************************************************************!*\
+  !*** ./resources/js/Pages/User/Cuti.vue?vue&type=script&lang=js ***!
+  \******************************************************************/
             /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
                 "use strict"
                 __webpack_require__.r(__webpack_exports__)
                 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
                     /* harmony export */ default: () =>
-                        /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Input_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__[
+                        /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Cuti_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__[
                             "default"
                         ],
                     /* harmony export */
                 })
-                /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Input_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ =
+                /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Cuti_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ =
                     __webpack_require__(
-                        /*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Input.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Mading/Input.vue?vue&type=script&setup=true&lang=js"
+                        /*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Cuti.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Cuti.vue?vue&type=script&lang=js"
                     )
 
                 /***/
             },
 
-        /***/ "./resources/js/Pages/Mading/One.vue?vue&type=script&setup=true&lang=js":
-            /*!******************************************************************************!*\
-  !*** ./resources/js/Pages/Mading/One.vue?vue&type=script&setup=true&lang=js ***!
-  \******************************************************************************/
+        /***/ "./resources/js/Pages/User/Dashboard.vue?vue&type=script&lang=js":
+            /*!***********************************************************************!*\
+  !*** ./resources/js/Pages/User/Dashboard.vue?vue&type=script&lang=js ***!
+  \***********************************************************************/
             /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
                 "use strict"
                 __webpack_require__.r(__webpack_exports__)
                 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
                     /* harmony export */ default: () =>
-                        /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_One_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__[
+                        /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Dashboard_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__[
                             "default"
                         ],
                     /* harmony export */
                 })
-                /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_One_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ =
+                /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Dashboard_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ =
                     __webpack_require__(
-                        /*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./One.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Mading/One.vue?vue&type=script&setup=true&lang=js"
+                        /*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Dashboard.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Dashboard.vue?vue&type=script&lang=js"
+                    )
+
+                /***/
+            },
+
+        /***/ "./resources/js/Pages/User/Datadiri.vue?vue&type=script&lang=js":
+            /*!**********************************************************************!*\
+  !*** ./resources/js/Pages/User/Datadiri.vue?vue&type=script&lang=js ***!
+  \**********************************************************************/
+            /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+                "use strict"
+                __webpack_require__.r(__webpack_exports__)
+                /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+                    /* harmony export */ default: () =>
+                        /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Datadiri_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__[
+                            "default"
+                        ],
+                    /* harmony export */
+                })
+                /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Datadiri_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ =
+                    __webpack_require__(
+                        /*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Datadiri.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Datadiri.vue?vue&type=script&lang=js"
+                    )
+
+                /***/
+            },
+
+        /***/ "./resources/js/Pages/User/History.vue?vue&type=script&lang=js":
+            /*!*********************************************************************!*\
+  !*** ./resources/js/Pages/User/History.vue?vue&type=script&lang=js ***!
+  \*********************************************************************/
+            /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+                "use strict"
+                __webpack_require__.r(__webpack_exports__)
+                /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+                    /* harmony export */ default: () =>
+                        /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_History_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__[
+                            "default"
+                        ],
+                    /* harmony export */
+                })
+                /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_History_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ =
+                    __webpack_require__(
+                        /*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./History.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/History.vue?vue&type=script&lang=js"
+                    )
+
+                /***/
+            },
+
+        /***/ "./resources/js/Pages/User/Izin.vue?vue&type=script&lang=js":
+            /*!******************************************************************!*\
+  !*** ./resources/js/Pages/User/Izin.vue?vue&type=script&lang=js ***!
+  \******************************************************************/
+            /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+                "use strict"
+                __webpack_require__.r(__webpack_exports__)
+                /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+                    /* harmony export */ default: () =>
+                        /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Izin_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__[
+                            "default"
+                        ],
+                    /* harmony export */
+                })
+                /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Izin_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ =
+                    __webpack_require__(
+                        /*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Izin.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Izin.vue?vue&type=script&lang=js"
+                    )
+
+                /***/
+            },
+
+        /***/ "./resources/js/Pages/User/Notification.vue?vue&type=script&lang=js":
+            /*!**************************************************************************!*\
+  !*** ./resources/js/Pages/User/Notification.vue?vue&type=script&lang=js ***!
+  \**************************************************************************/
+            /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+                "use strict"
+                __webpack_require__.r(__webpack_exports__)
+                /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+                    /* harmony export */ default: () =>
+                        /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Notification_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__[
+                            "default"
+                        ],
+                    /* harmony export */
+                })
+                /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Notification_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ =
+                    __webpack_require__(
+                        /*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Notification.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Notification.vue?vue&type=script&lang=js"
                     )
 
                 /***/
@@ -54883,81 +55655,161 @@ return withDirectives(h(comp), [
                 /***/
             },
 
-        /***/ "./resources/js/Pages/Mading/All.vue?vue&type=template&id=9f1bca26":
-            /*!*************************************************************************!*\
-  !*** ./resources/js/Pages/Mading/All.vue?vue&type=template&id=9f1bca26 ***!
-  \*************************************************************************/
-            /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-                "use strict"
-                __webpack_require__.r(__webpack_exports__)
-                /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-                    /* harmony export */ render: () =>
-                        /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_All_vue_vue_type_template_id_9f1bca26__WEBPACK_IMPORTED_MODULE_0__.render,
-                    /* harmony export */
-                })
-                /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_All_vue_vue_type_template_id_9f1bca26__WEBPACK_IMPORTED_MODULE_0__ =
-                    __webpack_require__(
-                        /*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./All.vue?vue&type=template&id=9f1bca26 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Mading/All.vue?vue&type=template&id=9f1bca26"
-                    )
-
-                /***/
-            },
-
-        /***/ "./resources/js/Pages/Mading/Create.vue?vue&type=template&id=3f0c11e0":
-            /*!****************************************************************************!*\
-  !*** ./resources/js/Pages/Mading/Create.vue?vue&type=template&id=3f0c11e0 ***!
-  \****************************************************************************/
-            /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-                "use strict"
-                __webpack_require__.r(__webpack_exports__)
-                /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-                    /* harmony export */ render: () =>
-                        /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Create_vue_vue_type_template_id_3f0c11e0__WEBPACK_IMPORTED_MODULE_0__.render,
-                    /* harmony export */
-                })
-                /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Create_vue_vue_type_template_id_3f0c11e0__WEBPACK_IMPORTED_MODULE_0__ =
-                    __webpack_require__(
-                        /*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Create.vue?vue&type=template&id=3f0c11e0 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Mading/Create.vue?vue&type=template&id=3f0c11e0"
-                    )
-
-                /***/
-            },
-
-        /***/ "./resources/js/Pages/Mading/Input.vue?vue&type=template&id=1ac1bf96":
+        /***/ "./resources/js/Pages/User/Absensi.vue?vue&type=template&id=b0a61d14":
             /*!***************************************************************************!*\
-  !*** ./resources/js/Pages/Mading/Input.vue?vue&type=template&id=1ac1bf96 ***!
+  !*** ./resources/js/Pages/User/Absensi.vue?vue&type=template&id=b0a61d14 ***!
   \***************************************************************************/
             /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
                 "use strict"
                 __webpack_require__.r(__webpack_exports__)
                 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
                     /* harmony export */ render: () =>
-                        /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Input_vue_vue_type_template_id_1ac1bf96__WEBPACK_IMPORTED_MODULE_0__.render,
+                        /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Absensi_vue_vue_type_template_id_b0a61d14__WEBPACK_IMPORTED_MODULE_0__.render,
                     /* harmony export */
                 })
-                /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Input_vue_vue_type_template_id_1ac1bf96__WEBPACK_IMPORTED_MODULE_0__ =
+                /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Absensi_vue_vue_type_template_id_b0a61d14__WEBPACK_IMPORTED_MODULE_0__ =
                     __webpack_require__(
-                        /*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Input.vue?vue&type=template&id=1ac1bf96 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Mading/Input.vue?vue&type=template&id=1ac1bf96"
+                        /*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Absensi.vue?vue&type=template&id=b0a61d14 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Absensi.vue?vue&type=template&id=b0a61d14"
                     )
 
                 /***/
             },
 
-        /***/ "./resources/js/Pages/Mading/One.vue?vue&type=template&id=cfdf359c":
-            /*!*************************************************************************!*\
-  !*** ./resources/js/Pages/Mading/One.vue?vue&type=template&id=cfdf359c ***!
-  \*************************************************************************/
+        /***/ "./resources/js/Pages/User/Approval.vue?vue&type=template&id=194669ce":
+            /*!****************************************************************************!*\
+  !*** ./resources/js/Pages/User/Approval.vue?vue&type=template&id=194669ce ***!
+  \****************************************************************************/
             /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
                 "use strict"
                 __webpack_require__.r(__webpack_exports__)
                 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
                     /* harmony export */ render: () =>
-                        /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_One_vue_vue_type_template_id_cfdf359c__WEBPACK_IMPORTED_MODULE_0__.render,
+                        /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Approval_vue_vue_type_template_id_194669ce__WEBPACK_IMPORTED_MODULE_0__.render,
                     /* harmony export */
                 })
-                /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_One_vue_vue_type_template_id_cfdf359c__WEBPACK_IMPORTED_MODULE_0__ =
+                /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Approval_vue_vue_type_template_id_194669ce__WEBPACK_IMPORTED_MODULE_0__ =
                     __webpack_require__(
-                        /*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./One.vue?vue&type=template&id=cfdf359c */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Mading/One.vue?vue&type=template&id=cfdf359c"
+                        /*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Approval.vue?vue&type=template&id=194669ce */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Approval.vue?vue&type=template&id=194669ce"
+                    )
+
+                /***/
+            },
+
+        /***/ "./resources/js/Pages/User/Cuti.vue?vue&type=template&id=db3f6d1c":
+            /*!************************************************************************!*\
+  !*** ./resources/js/Pages/User/Cuti.vue?vue&type=template&id=db3f6d1c ***!
+  \************************************************************************/
+            /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+                "use strict"
+                __webpack_require__.r(__webpack_exports__)
+                /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+                    /* harmony export */ render: () =>
+                        /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Cuti_vue_vue_type_template_id_db3f6d1c__WEBPACK_IMPORTED_MODULE_0__.render,
+                    /* harmony export */
+                })
+                /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Cuti_vue_vue_type_template_id_db3f6d1c__WEBPACK_IMPORTED_MODULE_0__ =
+                    __webpack_require__(
+                        /*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Cuti.vue?vue&type=template&id=db3f6d1c */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Cuti.vue?vue&type=template&id=db3f6d1c"
+                    )
+
+                /***/
+            },
+
+        /***/ "./resources/js/Pages/User/Dashboard.vue?vue&type=template&id=49ea5719":
+            /*!*****************************************************************************!*\
+  !*** ./resources/js/Pages/User/Dashboard.vue?vue&type=template&id=49ea5719 ***!
+  \*****************************************************************************/
+            /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+                "use strict"
+                __webpack_require__.r(__webpack_exports__)
+                /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+                    /* harmony export */ render: () =>
+                        /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Dashboard_vue_vue_type_template_id_49ea5719__WEBPACK_IMPORTED_MODULE_0__.render,
+                    /* harmony export */
+                })
+                /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Dashboard_vue_vue_type_template_id_49ea5719__WEBPACK_IMPORTED_MODULE_0__ =
+                    __webpack_require__(
+                        /*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Dashboard.vue?vue&type=template&id=49ea5719 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Dashboard.vue?vue&type=template&id=49ea5719"
+                    )
+
+                /***/
+            },
+
+        /***/ "./resources/js/Pages/User/Datadiri.vue?vue&type=template&id=66097231":
+            /*!****************************************************************************!*\
+  !*** ./resources/js/Pages/User/Datadiri.vue?vue&type=template&id=66097231 ***!
+  \****************************************************************************/
+            /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+                "use strict"
+                __webpack_require__.r(__webpack_exports__)
+                /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+                    /* harmony export */ render: () =>
+                        /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Datadiri_vue_vue_type_template_id_66097231__WEBPACK_IMPORTED_MODULE_0__.render,
+                    /* harmony export */
+                })
+                /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Datadiri_vue_vue_type_template_id_66097231__WEBPACK_IMPORTED_MODULE_0__ =
+                    __webpack_require__(
+                        /*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Datadiri.vue?vue&type=template&id=66097231 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Datadiri.vue?vue&type=template&id=66097231"
+                    )
+
+                /***/
+            },
+
+        /***/ "./resources/js/Pages/User/History.vue?vue&type=template&id=9b972f4e":
+            /*!***************************************************************************!*\
+  !*** ./resources/js/Pages/User/History.vue?vue&type=template&id=9b972f4e ***!
+  \***************************************************************************/
+            /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+                "use strict"
+                __webpack_require__.r(__webpack_exports__)
+                /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+                    /* harmony export */ render: () =>
+                        /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_History_vue_vue_type_template_id_9b972f4e__WEBPACK_IMPORTED_MODULE_0__.render,
+                    /* harmony export */
+                })
+                /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_History_vue_vue_type_template_id_9b972f4e__WEBPACK_IMPORTED_MODULE_0__ =
+                    __webpack_require__(
+                        /*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./History.vue?vue&type=template&id=9b972f4e */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/History.vue?vue&type=template&id=9b972f4e"
+                    )
+
+                /***/
+            },
+
+        /***/ "./resources/js/Pages/User/Izin.vue?vue&type=template&id=10b0b4be":
+            /*!************************************************************************!*\
+  !*** ./resources/js/Pages/User/Izin.vue?vue&type=template&id=10b0b4be ***!
+  \************************************************************************/
+            /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+                "use strict"
+                __webpack_require__.r(__webpack_exports__)
+                /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+                    /* harmony export */ render: () =>
+                        /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Izin_vue_vue_type_template_id_10b0b4be__WEBPACK_IMPORTED_MODULE_0__.render,
+                    /* harmony export */
+                })
+                /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Izin_vue_vue_type_template_id_10b0b4be__WEBPACK_IMPORTED_MODULE_0__ =
+                    __webpack_require__(
+                        /*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Izin.vue?vue&type=template&id=10b0b4be */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Izin.vue?vue&type=template&id=10b0b4be"
+                    )
+
+                /***/
+            },
+
+        /***/ "./resources/js/Pages/User/Notification.vue?vue&type=template&id=7ba986f6":
+            /*!********************************************************************************!*\
+  !*** ./resources/js/Pages/User/Notification.vue?vue&type=template&id=7ba986f6 ***!
+  \********************************************************************************/
+            /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+                "use strict"
+                __webpack_require__.r(__webpack_exports__)
+                /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+                    /* harmony export */ render: () =>
+                        /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Notification_vue_vue_type_template_id_7ba986f6__WEBPACK_IMPORTED_MODULE_0__.render,
+                    /* harmony export */
+                })
+                /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Notification_vue_vue_type_template_id_7ba986f6__WEBPACK_IMPORTED_MODULE_0__ =
+                    __webpack_require__(
+                        /*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Notification.vue?vue&type=template&id=7ba986f6 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Notification.vue?vue&type=template&id=7ba986f6"
                     )
 
                 /***/
@@ -55402,10 +56254,14 @@ return withDirectives(h(comp), [
                     "./Auth/ResetPassword.vue": "./resources/js/Pages/Auth/ResetPassword.vue",
                     "./Auth/VerifyEmail.vue": "./resources/js/Pages/Auth/VerifyEmail.vue",
                     "./Dashboard.vue": "./resources/js/Pages/Dashboard.vue",
-                    "./Mading/All.vue": "./resources/js/Pages/Mading/All.vue",
-                    "./Mading/Create.vue": "./resources/js/Pages/Mading/Create.vue",
-                    "./Mading/Input.vue": "./resources/js/Pages/Mading/Input.vue",
-                    "./Mading/One.vue": "./resources/js/Pages/Mading/One.vue",
+                    "./User/Absensi.vue": "./resources/js/Pages/User/Absensi.vue",
+                    "./User/Approval.vue": "./resources/js/Pages/User/Approval.vue",
+                    "./User/Cuti.vue": "./resources/js/Pages/User/Cuti.vue",
+                    "./User/Dashboard.vue": "./resources/js/Pages/User/Dashboard.vue",
+                    "./User/Datadiri.vue": "./resources/js/Pages/User/Datadiri.vue",
+                    "./User/History.vue": "./resources/js/Pages/User/History.vue",
+                    "./User/Izin.vue": "./resources/js/Pages/User/Izin.vue",
+                    "./User/Notification.vue": "./resources/js/Pages/User/Notification.vue",
                     "./Welcome.vue": "./resources/js/Pages/Welcome.vue",
                 }
 
